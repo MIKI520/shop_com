@@ -1,6 +1,6 @@
 <template>
-  <div class="layout">
-    Home
+  <div>
+    menu
   </div>
 </template>
 
@@ -10,8 +10,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.layout{
-    height: 100%;
-}
+<style>
+
 </style>
