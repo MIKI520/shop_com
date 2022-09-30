@@ -4,31 +4,54 @@ import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import MenuView from '@/views/MenuView.vue'
 import AugustView from '@/views/AugustView.vue'
+import RegisterView from '@/layout/RegisterView.vue'
+import LoginView from '@/layout/LoginView.vue'
+import AdminView from '@/layout/HomeView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+
   {
-    path: '/home',
-    name: 'home',
-    component: HomeView
+    path: '/',
+    name: 'admin',
+    component: AdminView,
+    children: [
+      {
+        path:'/',
+        name:'home',
+        component: HomeView
+      },
+      {
+        path: '/about',
+        name: 'about',
+        component: AboutView
+      },
+      {
+        path: '/august',
+        name: 'august',
+        component: AugustView
+      }
+      ,
+      {
+        path: '/menu',
+        name: 'menu',
+        component: MenuView
+      },
+    ]
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView
+    path:'/login',
+    name:'login',
+    component:LoginView
   },
   {
-    path: '/august',
-    name: 'august',
-    component: AugustView
+    path:'/register',
+    name:'register',
+    component:RegisterView
+
   }
-  ,
-  {
-    path: '/menu',
-    name: 'menu',
-    component: MenuView
-  }
+
 ]
 
 const router = new VueRouter({
